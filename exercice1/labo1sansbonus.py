@@ -26,7 +26,7 @@ while True:
         led.value(0)
 
     elif mode == 1:  #  (0,5 Hz -> période 2s)
-        if time.ticks_ms() - last_toggle > 1000:  #  state ON 1 s OFF 1s 1s=1000ms
+        if time.ticks_ms() - last_toggle > 1000:  #  state ON 1 s OFF 1s 1s =1000ms
             led_state = not led_state
             led.value(led_state)
             last_toggle = time.ticks_ms()
