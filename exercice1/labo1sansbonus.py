@@ -22,7 +22,7 @@ while True:
     last_button = current_button
 
     # Gestion des modes
-    if mode == 0:   # LED éteinte
+    if mode == 0:   # LED OFF
         led.value(0)
 
     elif mode == 1:  #  (0,5 Hz -> période 2s)
@@ -33,6 +33,6 @@ while True:
 
     elif mode == 2:  #  (2 Hz -> période 0,5s)
         if time.ticks_ms() - last_toggle > 250:  
-            led_state = not led_state  # mis a true
+            led_state = not led_state  
             led.value(led_state)
             last_toggle = time.ticks_ms()
