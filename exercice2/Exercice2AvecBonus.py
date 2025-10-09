@@ -74,7 +74,7 @@ try:
             # front montant
             if last_button_state == 0 and current_button_state == 1:
                 melody_index = (melody_index + 1) % len(melodies)
-                print(f"Changement de mélodie : {melodies[melody_index][0]}")
+                print(f"Changement de melodie : {melodies[melody_index][0]}")
                 sleep(0.3)  # anti-rebond
                 break  # sortir de la boucle pour changer de mélodie
 
@@ -89,7 +89,7 @@ try:
         sleep(1)  # pause avant de recommencer
 
 except KeyboardInterrupt:
-    print("\nArrêt des mélodies")
+    print("\nArret des melodies")
     buzzer.duty_u16(0)
     buzzer.deinit()
     led.value(0)
