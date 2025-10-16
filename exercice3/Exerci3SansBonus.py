@@ -3,20 +3,20 @@ from dht20 import DHT20
 import time
 
 # ===== CONFIGURATION DES BROCHES =====
-# I2C0 pour DHT20 (SDA=GP4, SCL=GP5)
+#  DHT20 
 i2c0 = I2C(0, scl=Pin(5), sda=Pin(4), freq=100000)
 
-# I2C1 pour écran OLED (SDA=GP6, SCL=GP7)
+#  écran OLED 
 i2c1 = I2C(1, scl=Pin(7), sda=Pin(6), freq=100000)
 
 # Potentiomètre (résistance variable) sur ADC0 (GP26)
 potentiometer = ADC(Pin(26))
 
-# LED sur GP15
-led = Pin(15, Pin.OUT)
+# LED 
+led = Pin(20, Pin.OUT)
 
 # Buzzer sur GP14 (avec PWM pour le son)
-buzzer = PWM(Pin(14))
+buzzer = PWM(Pin(18))
 buzzer.freq(2000)  # Fréquence du son à 2kHz
 buzzer.duty_u16(0)  # Éteint au départ
 
@@ -162,4 +162,5 @@ while True:
         oled.clear()
         oled.print("ERROR!", 0, 0)
         oled.print("Check sensors", 1, 0)
+
         time.sleep(2)
